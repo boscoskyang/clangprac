@@ -40,7 +40,7 @@ void retirement(int startAge, double initial, retire_info working, retire_info r
 
   }
     
-  void  main (){
+  int  main (){
   
     retire_info working;
     working.months = 489;
@@ -53,5 +53,5 @@ void retirement(int startAge, double initial, retire_info working, retire_info r
     retired.rate_of_return = 0.01/12;
     
     retirement(327, 21345, working, retired); 
-
+    return 0;
   }
