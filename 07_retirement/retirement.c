@@ -34,18 +34,17 @@ struct _results {
   }
 
 
-int retirement(int startAge, double initial, retire_info working, retire_info retired){
+void retirement(int startAge, double initial, retire_info working, retire_info retired){
   results ongoing;
   ongoing =  godzilla(startAge, initial, working);
   startAge = ongoing.age1 ;
   initial = ongoing.initial1;
   ongoing = godzilla(startAge, initial, retired);
-   return 0;
 
   }
     
   int main (){
-    typedef struct _retire_info retire_info;
+  
     retire_info working;
     working.months = 489;
     working.contribution = 1000;
