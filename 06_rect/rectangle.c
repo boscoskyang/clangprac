@@ -17,15 +17,81 @@ int max (int a, int b) {
 
 //Declare your rectangle structure here!
 
-
+typedef struct prerectangle {
+  int x;
+  int y;
+  int width;
+  int height;
+} rectangle;
+  
+  
+  
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
-  return r;
+  if (r.height < 0){
+    r.y +=  r.height;
+    r.height = abs(r.height);
+  if (r.width < 0){
+    r.x += r.width;
+    r.width =abs(r.width);
+    return r;
+  }
+  else return r;
+  }
+  else
+    {
+      if (r.width < 0){
+    r.x += r.width;
+    r.width = abs(r.width);
+    return r;
+  }
+      else return r;
+    }
 }
+  
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
-  return r1;
-}
+   rectangle r11;
+   r11.x = 0;
+   r11.y = 0;
+   r11.width = 0;
+   r11.height = 0;
+   r1 = canonicalize(r1);
+   r2 = canonicalize(r2);
+  
+  if((max(r1.x,r2.x) < min(r1.x+r1.width,r2.x+r2.width))){
+      r11.x = max(r1.x, r2.x);
+      r11.width = min(r1.x+r1.width,r2.x+r2.width)- max(r1.x,r2.x);
+      if ((max(r1.y, r2.y) > min(r1.y + r1.height, r2.y + r2.height))){
+	r11.x = 0;
+	r11.width = 0;
+      }
+      else;
+	
+  }
+     
+      else{ r11.x=max(r1.x,r2.x);
+	r11.width = 0;
+      }
+  
+    if ((max(r1.y, r2.y) < min(r1.y + r1.height, r2.y + r2.height))){
+      r11.y = max(r1.y, r2.y);
+      r11.height = min(r1.y + r1.height, r2.y + r2.height) - max(r1.y, r2.y);
+      if ((max(r1.x,r2.x) > min(r1.x+r1.width,r2.x+r2.width))) {
+	r11.y = 0;
+	r11.height = 0; 
+      }
+      else;
+    }
+   
+    else{
+	 r11.y=max(r1.y,r2.y);
+      r11.height = 0;
+    }
+  
+  return r11;}
+  
+
 
 //You should not need to modify any code below this line
 void printRectangle(rectangle r) {
