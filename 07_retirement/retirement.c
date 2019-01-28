@@ -20,9 +20,6 @@ struct _results {
     int month_count;
 
     for (month_count = 0; month_count < play.months ; month_count++){
-      //if(month_count == 0){  
-      //printf("Age %3d month %2d you have $%.2lf\n", (startAgep/12),(startAgep%12), initialp); }
-      //else;
       printf("Age %3d month %2d you have $%.2lf\n", ((startAgep + month_count)/12),(startAgep + month_count)%12, initialp);
     initialp += initialp * play.rate_of_return ;
     initialp += play.contribution ;
@@ -43,7 +40,7 @@ void retirement(int startAge, double initial, retire_info working, retire_info r
 
   }
     
-  int main (){
+  void  main (){
   
     retire_info working;
     working.months = 489;
