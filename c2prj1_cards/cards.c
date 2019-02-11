@@ -75,7 +75,7 @@ char suit_letter(card_t c) {
     return 's';
     break;
   case DIAMONDS:
-    return 's';
+    return 'd';
     break;
   case HEARTS:
     return 'h';
