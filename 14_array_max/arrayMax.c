@@ -3,7 +3,7 @@
 
 int * arrayMax(int * array, size_t n) {
   int * maxie;
-  if (n == 0 || array == NULL){
+  if (n <= 0){
     maxie = NULL;
     return maxie;}
   else{
