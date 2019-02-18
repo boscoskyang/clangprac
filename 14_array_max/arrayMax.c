@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * arrayMax(int * array, int n) {
+int * arrayMax(int * array, size_t n) {
   int * maxie;
   if (n == 0 || array == NULL){
     maxie = NULL;
