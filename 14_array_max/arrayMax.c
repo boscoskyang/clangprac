@@ -2,7 +2,23 @@
 #include <stdlib.h>
 
 int * arrayMax(int * array, int n) {
-  return NULL;
+  int * maxie;
+  if (n == 0 || array == NULL){
+    maxie = NULL;
+    return maxie;}
+  else{
+  maxie = &array[0];
+  int currMax = *maxie;
+  int nextMax;
+    for (int i = 1; i < n ;  i++){
+      nextMax = array[i];
+      if (currMax > nextMax){
+	maxie = maxie;}
+      else
+	maxie = &array[i];
+    }
+  
+    return maxie;} 
 }
 
 void doTest(int * array, int n) {
