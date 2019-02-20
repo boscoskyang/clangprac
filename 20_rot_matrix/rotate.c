@@ -5,7 +5,8 @@
 void rotate(char matrix[10][10]){
   for (int i = 0; i < 10; i++){
     for (int j = 9; j >= 0; j--){
-      printf("%c", matrix[j][i];
+      printf("%c", matrix[j][i]);
+      
 	     }
 	printf("\n");
     }
